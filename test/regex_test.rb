@@ -23,6 +23,14 @@ class RegexTest < Test::Unit::TestCase
     assert_no_match "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5"
   end
 
+  def test_2007_on_some_winxp
+    #probably also matches IE7, but... so be it
+    assert_match "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; .NET4.0E; IPH 1.1.21.4019)"
+  end
+
+  def test_ie8_on_winxp
+    assert_no_match "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; .NET4.0E; IPH 1.1.21.4019)"
+  end
 
   private
 
